@@ -17,7 +17,7 @@ export default function Profile() {
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center">
       <div className="w-full max-w-4xl bg-white p-6">
-        {/* HEADER */}
+       
         <div className="flex gap-10 items-center">
           <img
             src={
@@ -40,7 +40,7 @@ export default function Profile() {
               </Link>
             </div>
 
-            {/* COUNTS */}
+          
             <div className="flex gap-6 mt-4 text-sm">
               <span>
                 <strong>{user.postsCount}</strong> posts
@@ -53,7 +53,7 @@ export default function Profile() {
               </span>
             </div>
 
-            {/* BIO */}
+           
             <div className="mt-3">
               <p className="text-sm">{user.bio || "No bio added yet"}</p>
               <p className="text-xs text-gray-500 mt-1">
@@ -63,13 +63,13 @@ export default function Profile() {
           </div>
         </div>
 
-        {/* DIVIDER */}
+        
         <div className="border-t mt-8 pt-6">
           <h3 className="text-center text-sm font-semibold text-gray-500">
             POSTS
           </h3>
 
-          {/* POSTS GRID (EMPTY STATE) */}
+          
           {user.postsCount === 0 ? (
             <div className="flex flex-col items-center mt-10 text-gray-400">
               <div className="w-20 h-20 border-2 border-gray-300 rounded-full flex items-center justify-center text-2xl">
@@ -79,7 +79,7 @@ export default function Profile() {
             </div>
           ) : (
             <div className="grid grid-cols-3 gap-1 mt-6">
-              {/* Future posts go here */}
+              
             </div>
           )}
         </div>
