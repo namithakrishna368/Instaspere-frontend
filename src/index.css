@@ -1,3 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-neon-purple: #B026FF;
+  --color-neon-blue: #00F0FF;
+  --theme-gradient-from: #B026FF;
+  --theme-gradient-to: #7B2CBF;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+  color: #1a1a1a;
+}
+
+.font-logo {
+  font-family: 'Fredoka', sans-serif;
+}
+
+.font-tagline {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.neon-glow {
+  box-shadow: 0 0 15px rgba(176, 38, 255, 0.3);
+}
+
+.neon-text-glow {
+  text-shadow: 0 0 10px rgba(176, 38, 255, 0.4);
+}
+
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 0 15px rgba(176, 38, 255, 0.15);
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@keyframes toastSlideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
