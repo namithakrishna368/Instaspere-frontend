@@ -9,7 +9,8 @@ const DEFAULT_AVATAR = "https://www.seekpng.com/png/detail/966-9665493_my-profil
 export const getImageUrl = (path) => {
     if (!path) return null;
     if (path.startsWith("http") || path.startsWith("data:")) return path;
-    return `http://localhost:5000/${path.replace(/\\/g, "/")}`;
+    const base = import.meta.env.VITE_API_URL || "http://localhost:5000";
+    return `${base}/${path.replace(/\\/g, "/")}`;
 };
 
 /**

@@ -54,7 +54,7 @@ export const SocketProvider = ({ children }) => {
     // 🔌 Setup socket connection and real-time badge listeners
     useEffect(() => {
         if (user) {
-            const newSocket = io("http://localhost:5000");
+            const newSocket = io(import.meta.env.VITE_API_URL || "http://localhost:5000");
             setSocket(newSocket);
             newSocket.emit("join", user._id);
 

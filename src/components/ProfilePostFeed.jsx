@@ -27,7 +27,8 @@ export default function ProfilePostFeed({ posts, initialPostId, onBack, onPostsU
     const getImageUrl = (path) => {
         if (!path) return null;
         if (path.startsWith("http") || path.startsWith("data:")) return path;
-        return `http://localhost:5000/${path.replace(/\\/g, "/")}`;
+        const base = import.meta.env.VITE_API_URL || "http://localhost:5000";
+        return `${base}/${path.replace(/\\/g, "/")}`;
     };
 
     const handleLike = async (postId) => {
