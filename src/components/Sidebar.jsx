@@ -23,9 +23,9 @@ export default function Sidebar() {
     const menuItems = [
         { name: "Home", icon: Home, path: "/home" },
         { name: "Search", icon: Search, path: "/search" },
+        { name: "Notifications", icon: Heart, path: "/notifications", badge: notifCount, isMobileHidden: true },
         { name: "Create", icon: PlusSquare, path: "/create" },
         { name: "Message", icon: MessageCircle, path: "/messages", badge: messageCount, isMobileHidden: true },
-        { name: "Notifications", icon: Heart, path: "/notifications", badge: notifCount, isMobileHidden: true },
         { name: "Profile", icon: User, path: "/profile" },
     ];
 
@@ -36,7 +36,7 @@ export default function Sidebar() {
     };
 
     return (
-        <div className="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 flex flex-row justify-around items-center md:flex-col md:justify-start md:items-stretch md:fixed md:top-0 md:left-0 md:h-screen md:w-72 md:bg-white/80 md:backdrop-blur-md md:border-r md:border-white/50">
+        <div className="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 flex flex-row justify-around items-center md:flex-col md:justify-start md:items-stretch md:fixed md:top-0 md:left-0 md:h-screen md:w-72 md:bg-white/80 md:backdrop-blur-md md:border-r md:border-white/50 md:border-t-0">
             {/* Logo Section - Hidden on Mobile */}
             <div className="hidden md:flex pt-10 pb-8 justify-center">
                 <Logo />
@@ -74,6 +74,7 @@ export default function Sidebar() {
                     );
                 })}
 
+                {/* Logout - Desktop */}
                 <div className="hidden md:block mt-auto mb-6 px-4 space-y-2">
                     <button
                         onClick={handleLogout}
@@ -83,6 +84,14 @@ export default function Sidebar() {
                         <span className="font-logo">LogOut</span>
                     </button>
                 </div>
+
+                {/* Logout - Mobile (small icon in bottom nav) */}
+                <button
+                    onClick={handleLogout}
+                    className="flex items-center justify-center p-2 md:hidden"
+                >
+                    <LogOut size={24} className="text-gray-400 hover:text-red-500 transition-colors" strokeWidth={2} />
+                </button>
             </nav>
         </div>
     );
